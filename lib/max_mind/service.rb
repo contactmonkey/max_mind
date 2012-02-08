@@ -3,7 +3,7 @@ module MaxMind
     cattr_accessor :license_key
 
     cattr_accessor :base_url
-    self.base_url = 'http://geoip1.maxmind.com'
+    self.base_url = 'http://geoip.maxmind.com'
 
     class_inheritable_accessor :base_path
 
