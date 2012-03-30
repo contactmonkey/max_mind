@@ -5,8 +5,9 @@ module MaxMind
     cattr_accessor :base_url
     self.base_url = 'http://geoip.maxmind.com'
 
-    class_inheritable_accessor :base_path
-
+    #class_inheritable_accessor :base_path
+	class_attribute :base_path
+	
     attr_accessor :response
 
     def self.fetch_for_ip(ip)
