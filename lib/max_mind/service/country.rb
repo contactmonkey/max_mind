@@ -1,7 +1,7 @@
 module MaxMind
   class CountryService < Service
 
-    self.base_path = '/a'
+    self.base_path = '/country'
 
     def parsed_response
       if self.valid_response?

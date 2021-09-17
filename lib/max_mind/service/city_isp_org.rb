@@ -1,7 +1,7 @@
 module MaxMind
   class CityIspOrgService < Service
 
-    self.base_path = '/f'
+    self.base_path = '/city-isp-org'
 
     def parsed_response
       if self.valid_response?

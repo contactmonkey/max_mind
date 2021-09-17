@@ -3,7 +3,7 @@ module MaxMind
     cattr_accessor :license_key
 
     cattr_accessor :base_url
-    self.base_url = 'http://geoip.maxmind.com/b'
+    self.base_url = 'https://geoip.maxmind.com/geoip/v1.0'
 
     #class_inheritable_accessor :base_path
 	class_attribute :base_path
@@ -31,7 +31,7 @@ module MaxMind
       uri = URI.parse(base_url)
 
       begin
-        self.response = Net::HTTP.get(uri.host, build_path(:l => license_key, :i => ip), uri.port)
+        self.response = Net::HTTP.get(uri.host, build_path(:l => license_key, :i => ip), uri.port, use_ssl: true)
       rescue EOFError => e
         raise ConnectionError, "The remote server dropped the connection"
       rescue Errno::ECONNRESET => e
